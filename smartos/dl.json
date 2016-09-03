@@ -1,0 +1,32 @@
+{
+  "alias": "dl",
+  "hostname": "dl",
+  "brand": "lx",
+  "kernel_version": "3.13.0",
+  "max_physical_memory": 4096,
+  "quota": 10,
+  "image_uuid": "05140a7e-279f-11e6-aedf-47d4f69d2887",
+  "default_gateway": "10.0.0.1",
+  "resolvers": [
+    "8.8.8.8",
+    "8.8.4.4"
+  ],
+  "nics": [
+    {
+      "nic_tag": "stub0",
+      "model": "virtio",
+      "ip": "10.0.0.102",
+      "netmask": "255.255.255.0",
+      "allow_ip_spoofing": "1",
+      "gateway": "10.0.0.1"
+    }
+  ],
+  "filesystems": [
+    {
+      "type":"lofs",
+      "source":"/store",
+      "target":"/mnt/store",
+      "options": ["rw"]
+    }
+  ]
+}
