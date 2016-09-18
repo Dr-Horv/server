@@ -1,0 +1,21 @@
+#!/bin/bash
+
+USER=$1
+GID_SHARED=3000
+
+if [ -z "$1" ]
+  then
+    echo "Missing user argument, ./scriptname <name>"
+    exit 1
+fi
+
+echo "Adding user: $USER..."
+adduser --gecos "" "$USER"
+
+echo "Adding user to shared group with gid: $GID_SHARED"
+usermod -aG container-shared "$USER"
+
+echo "Symlinking storage..."
+ln -s "/mnt/store" "/home/$USER/store"
+
+echo "Done"
